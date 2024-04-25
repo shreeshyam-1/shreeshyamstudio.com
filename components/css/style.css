@@ -1,0 +1,4 @@
+.temp{
+    @apply bg-red-500;
+    @apply bg-red-700
+}
