@@ -4,6 +4,9 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Nav from "@/components/Nav";
+import Card from "@/components/Card";
+import Carousel from "@/components/Carousel";
 
 export default function Home() {
 
@@ -39,32 +42,44 @@ export default function Home() {
   // useEffect(() => {
   //   getdata()
   // },[])
+
+  // return (
+  //   <>
+  //     <div>
+  //       <table>
+  //         <thead>
+  //           <tr>
+  //             <th>ID</th>
+  //             <th>Name</th>
+  //             <th>Price</th>
+  //             <th>Action</th>
+  //             <th>Discount</th>
+  //           </tr>
+  //         </thead>
+  //         <tbody>
+  //           {data.map((item) => (
+  //             <tr key={item.id}>
+  //               <td>{item.id}</td>
+  //               <td>{item.name}</td>
+  //               <td>{item.price}</td>
+  //               <td>{item.action}</td>
+  //               <td>{item.discount}</td>
+  //             </tr>
+  //           ))}
+  //         </tbody>
+  //       </table>
+  //     </div>
+  //   </>
+  // );
+
   return (
+
+
     <>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Action</th>
-              <th>Discount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td>{item.action}</td>
-                <td>{item.discount}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <Nav />
+      <Carousel />
+      <Card />
     </>
+
   );
 }
