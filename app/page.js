@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
 import Card from "@/components/Card";
 import Carousel from "@/components/Carousel";
+import Heading from "@/components/Heading";
 
 export default function Home() {
 
@@ -76,8 +77,8 @@ export default function Home() {
 
 
     <>
-      <Nav />
-      <Carousel />
+      <img src="images/logo.png" className="w-[95%] md:w-[80%] m-auto mt-10" alt="Singhal Sanitary and Hardware store logo" />
+      <Heading heading="Trending Products" />
       <Card />
     </>
 

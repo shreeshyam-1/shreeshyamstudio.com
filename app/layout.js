@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Darkmode from "@/components/Darkmode";
+import Nav from "@/components/Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,10 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-
       </head>
       <body className={inter.className}>
-        <Darkmode>{children}</Darkmode>
+
+        <Darkmode> <Nav /> <div className="w-screen h-[100px]"></div>{children}</Darkmode>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
       </body>
 
