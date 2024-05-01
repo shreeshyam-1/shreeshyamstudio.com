@@ -79,7 +79,15 @@ export default function Home() {
     <>
       <img src="images/logo.png" className="w-[95%] md:w-[80%] m-auto mt-10" alt="Singhal Sanitary and Hardware store logo" />
       <Heading heading="Trending Products" />
-      <Card />
+      <div className="w-[90%] m-auto flex gap-8 justify-center flex-wrap">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </>
 
   );
