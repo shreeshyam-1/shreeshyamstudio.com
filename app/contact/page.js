@@ -34,7 +34,7 @@ const page = () => {
             <div className="contactContent flex justify-center items-center flex-col pt-10">
                 {/* <img src="images/logo.webp" className=" max-w-[400px] mx-10" alt="Singhal Sanitary and Hardware store logo" /> */}
                 <h1 className='text-6xl font-medium tracking-wider mt-12'>Get in touch</h1>
-                <p className='mt-4 mb-20 text-gray-400 text-center'>Ready to bring your dream bathroom to life? Reach out and let's make it happen together.</p>
+                <p className='mt-4 mb-20 text-gray-400 text-center'>Ready to bring your dream bathroom to life? Reach out and let&apos;s make it happen together.</p>
                 <div className=' flex gap-5 flex-wrap justify-center'>
                     {
                         cardData.map((e, i) => (

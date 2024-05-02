@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -6,7 +7,7 @@ const Nav = () => {
         <nav className="shadow-md w-screen fixed top-0 bg-[#ffffffed] z-50">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
                 <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="images/logo2.png" className="h-16" alt="Singhal Sanitary and Hardware store logo" />
+                    <Image height={160} width={160} src="/images/logo2.png" className="h-16" alt="Singhal Sanitary and Hardware store logo" />
                     {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Singhal Sanitary and Hardware Store</span> */}
                 </Link>
                 <button data-collapse-toggle="navbar-multi-level" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-multi-level" aria-expanded="false">

@@ -1,19 +1,19 @@
 'use client'
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import Nav from "@/components/Nav";
+// import { useEffect, useState } from "react";
+// import Nav from "@/components/Nav";
 import Card from "@/components/Card";
-import Carousel from "@/components/Carousel";
+// import Carousel from "@/components/Carousel";
 import Heading from "@/components/Heading";
 
 export default function Home() {
 
 
-  const [data, setData] = useState([])
-  const [loader, setLoader] = useState(true)
+  // const [data, setData] = useState([])
+  // const [loader, setLoader] = useState(true)
 
 
   // const firebaseConfig = {
@@ -77,7 +77,7 @@ export default function Home() {
 
 
     <>
-      <img src="images/logo.png" className="w-[95%] md:w-[80%] m-auto mt-10" alt="Singhal Sanitary and Hardware store logo" />
+      <Image height={500} width={1000} src="/images/logo.png" className="w-[95%] md:w-[80%] m-auto mt-10" alt="Singhal Sanitary and Hardware store logo" />
       <Heading heading="Trending Products" />
       <div className="w-[90%] m-auto flex gap-8 justify-center flex-wrap">
         <Card />

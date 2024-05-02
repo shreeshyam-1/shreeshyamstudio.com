@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Darkmode from "@/components/Darkmode";
 import Nav from "@/components/Nav";
-
+// import "https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,13 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-      </head>
+      {/* <head> */}
+        {/* <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> */}
+      {/* </head> */}
       <body className={inter.className}>
 
         <Darkmode> <Nav /> <div className="w-screen h-[100px]"></div>{children}</Darkmode>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+        {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> */}
       </body>
 
     </html>
