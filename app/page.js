@@ -8,6 +8,7 @@ import Image from "next/image";
 import Card from "@/components/Card";
 // import Carousel from "@/components/Carousel";
 import Heading from "@/components/Heading";
+import { items } from "@/Data/Card"; 
 
 export default function Home() {
 
@@ -80,6 +81,9 @@ export default function Home() {
       <Image height={500} width={1000} src="/images/logo.png" className="w-[95%] md:w-[80%] m-auto mt-10" alt="Singhal Sanitary and Hardware store logo" />
       <Heading heading="Trending Products" />
       <div className="w-[90%] m-auto flex gap-8 justify-center flex-wrap">
+        {
+          items.map((e,i)=>(<Card data={e} key={i} />))
+        }
         {/* <Card />
         <Card />
         <Card />
