@@ -9,7 +9,7 @@ const page = () => {
             heading: "Visit us",
             subHeading: "Visit our shop",
             buttonText: "Get direction ",
-            buttonLink: "https://maps.app.goo.gl/1XwdE7gkBjn19tpm9",
+            buttonLink: "https://maps.app.goo.gl/Ks15KiUBGbQxVuJE6",
         },
         {
             icon: "<FaMobileRetro />",
