@@ -51,8 +51,8 @@ const items = [
     {
         heading:"CERA Chromo: Brass Long Body Bathroom taps and Kitchen taps with Foam Flow Chrome Finish and Quarter Turn Fitting",
         image:"ceraC.jpg",
-        price:"25",
-        discount:"1",
+        price:"",
+        discount:"",
         buttonLink:"https://maps.app.goo.gl/Ks15KiUBGbQxVuJE6"
     },
     {

@@ -1,8 +1,13 @@
+"use client"
+import { useAuth } from '@/context/AuthContext';
 import Image from 'next/image'
 import React from 'react'
 import { FaLocationDot, FaMobileRetro, FaRegMessage } from "react-icons/fa6";
 
 const page = () => {
+    const {tapData} = useAuth
+    console.log(tapData)
+
     const cardData = [
         {
             icon: "<FaLocationDot />",
