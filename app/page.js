@@ -5,10 +5,10 @@ import Heading from "@/components/Heading";
 import { items } from "@/Data/Card"; 
 import { useAuth } from "@/context/AuthContext";
 
-export default function Home() {
+export default function Page() {
   
   const { tapData } = useAuth();
-  console.log()
+  console.log(tapData)
 
   
 
@@ -20,8 +20,8 @@ export default function Home() {
       <Heading heading="Trending Products" />
       <div className="w-[90%] m-auto flex gap-8 justify-center flex-wrap">
         {
-          // Object.values(tapData).map((e,i)=>(<Card data={e} key={i} />))
-          items.map((e,i)=>(<Card data={e} key={i} />))
+          Object.values(tapData).map((e,i)=>(<Card data={e} key={i} />))
+          // items.map((e,i)=>(<Card data={e} Key={i} />))
         }
       </div>
     </>

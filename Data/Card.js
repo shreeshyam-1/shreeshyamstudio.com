@@ -2,8 +2,8 @@ const items = [
     {
         heading:"PMI Vignet: Brass Long Body Bathroom taps and Kitchen taps with Foam Flow Chrome Finish and Quarter Turn Fitting ",
         image:"pmiVignet.jpg",
-        price:"",
-        discount:"",
+        price:"500",
+        discount:"25",
         buttonLink:"https://maps.app.goo.gl/Ks15KiUBGbQxVuJE6"
     },
     {

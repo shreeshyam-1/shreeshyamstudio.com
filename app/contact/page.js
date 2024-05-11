@@ -5,8 +5,8 @@ import React from 'react'
 import { FaLocationDot, FaMobileRetro, FaRegMessage } from "react-icons/fa6";
 
 const page = () => {
-    const {tapData} = useAuth
-    console.log(tapData)
+    const {tapData,childDisplay} = useAuth()
+    console.log(tapData,childDisplay)
 
     const cardData = [
         {
@@ -43,7 +43,7 @@ const page = () => {
                 <div className=' flex gap-5 flex-wrap justify-center'>
                     {
                         cardData.map((e, i) => (
-                            <Card data={e} key={i} />
+                            <Card data={e} Key={i} />
                         ))
                     }
 
@@ -55,9 +55,9 @@ const page = () => {
 
 export default page
 
-export const Card = ({ data, key }) => {
+export const Card = ({ data, Key }) => {
     return (
-        <div className='w-[100%] sm:w-96 border-2 rounded-lg p-8 bg-white flex flex-col gap-2 shadow-sm shrink-0' key={key}>
+        <div className='w-[100%] sm:w-96 border-2 rounded-lg p-8 bg-white flex flex-col gap-2 shadow-sm shrink-0' key={Key}>
             <div className='bg-blue-100 aspect-square w-16 text-2xl rounded-md grid place-items-center text-blue-700'>
                 {
                     data.icon == "<FaLocationDot />" ? <FaLocationDot /> :
