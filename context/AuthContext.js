@@ -37,8 +37,9 @@ export const AuthContextProvider = ({ children }) => {
   //   Check weather the user was logged in or not
   useEffect(() => {
     // run every time when the login or logout was performed
+    console.log("11")
     const recheck = async()=>{
-
+      console.log("first")
       setchildDisplay(true)
       await fetchTaps(); // if user is authenticate to any of the club then it will call its id
     }
