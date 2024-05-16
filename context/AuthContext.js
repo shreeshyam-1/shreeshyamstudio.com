@@ -39,8 +39,8 @@ export const AuthContextProvider = ({ children }) => {
     // run every time when the login or logout was performed
     const recheck = async()=>{
 
-      await fetchTaps(); // if user is authenticate to any of the club then it will call its id
       setchildDisplay(true)
+      await fetchTaps(); // if user is authenticate to any of the club then it will call its id
     }
     return ()=> recheck();
   }, [auth.currentUser]);
