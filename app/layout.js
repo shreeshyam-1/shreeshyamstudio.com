@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
         <AuthContextProvider>
             {children}
         </AuthContextProvider>
+        {/* {children} */}
           </Darkmode>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
       </body>
