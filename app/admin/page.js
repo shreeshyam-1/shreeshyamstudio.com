@@ -5,7 +5,7 @@ import React from "react";
 
 
 const page = () => {
-  const { tapData,deleteTapData,fetchTaps } = useAuth();
+  const { tapData,deleteTapData,fetchTaps, deleteImage } = useAuth();
   console.log(tapData);
 
   const deleteData = async(e)=>{
@@ -13,7 +13,11 @@ const page = () => {
       return;
     }
 
+    // console.log(e)
+    // return
+
     try {
+      await deleteImage(tapData[e].image);
       await deleteTapData(e)
 
       fetchTaps();

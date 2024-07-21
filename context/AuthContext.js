@@ -9,7 +9,7 @@ import {
   sendPasswordResetEmail,
   updateProfile,
 } from "firebase/auth";
-import { auth, db } from "@/firebase/initializer";
+import { auth, db,storage } from "@/firebase/initializer";
 import { useRouter } from "next/navigation";
 import {
   addDoc,
@@ -24,7 +24,7 @@ import {
   orderBy,
   deleteDoc
 } from "firebase/firestore";
-import { getDownloadURL, getStorage, ref } from "firebase/storage";
+import { deleteObject, getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
 
 const AuthContext = createContext({});
 
@@ -47,37 +47,37 @@ export const AuthContextProvider = ({ children }) => {
       setchildDisplay(true)
 
 
-      // Create a reference to the file we want to download
-      const storage = getStorage();
-      const starsRef = ref(storage, 'testing/as.jpg');
+      // // Create a reference to the file we want to download
+      // const storage = getStorage();
+      // const starsRef = ref(storage, 'testing/as.jpg');
 
-      // Get the download URL
-      getDownloadURL(starsRef)
-        .then((url) => {
-          // Insert url into an <img> tag to "download"
-          console.log(url)
-        })
-        .catch((error) => {
-          // A full list of error codes is available at
-          // https://firebase.google.com/docs/storage/web/handle-errors
-          switch (error.code) {
-            case 'storage/object-not-found':
-              console.log("File doesn't exist")
-              break;
-            case 'storage/unauthorized':
-              console.log("User doesn't have permission to access the object")
-              break;
-            case 'storage/canceled':
-              console.log("User canceled the upload")
-              break;
+      // // Get the download URL
+      // getDownloadURL(starsRef)
+      //   .then((url) => {
+      //     // Insert url into an <img> tag to "download"
+      //     console.log(url)
+      //   })
+      //   .catch((error) => {
+      //     // A full list of error codes is available at
+      //     // https://firebase.google.com/docs/storage/web/handle-errors
+      //     switch (error.code) {
+      //       case 'storage/object-not-found':
+      //         console.log("File doesn't exist")
+      //         break;
+      //       case 'storage/unauthorized':
+      //         console.log("User doesn't have permission to access the object")
+      //         break;
+      //       case 'storage/canceled':
+      //         console.log("User canceled the upload")
+      //         break;
 
-            // ...
+      //       // ...
 
-            case 'storage/unknown':
-              console.log("Unknown error occurred, inspect the server response")
-              break;
-          }
-        });
+      //       case 'storage/unknown':
+      //         console.log("Unknown error occurred, inspect the server response")
+      //         break;
+      //     }
+      //   });
 
 
 
@@ -85,6 +85,36 @@ export const AuthContextProvider = ({ children }) => {
     recheck()
     return () => recheck();
   }, [auth.currentUser]);
+
+// delete image
+  const deleteImage = async (imageUrl) => {
+    const storageRef = ref(storage, imageUrl);
+    try {
+      await deleteObject(storageRef);
+
+    } catch (error) {
+      console.error("Failed to delete image:", error);
+    }
+  };
+
+// upload image on the firebase
+  const uploadImage = async (imageFile) => {
+    const storageRef = ref(storage, `images/${imageFile.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, imageFile);
+
+    return new Promise((resolve, reject) => {
+      uploadTask.on(
+        "state_changed",
+        null,
+        (error) => reject(error),
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            resolve(downloadURL);
+          });
+        }
+      );
+    });
+  };
 
 
 
@@ -135,6 +165,8 @@ export const AuthContextProvider = ({ children }) => {
         setTapData,
         fetchTaps,
         deleteTapData,
+        uploadImage,
+        deleteImage,
         // loading
       }}
     >

@@ -2,6 +2,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from 'firebase/storage';
 
 // configration data is stored on the cxi@miet.ac.in firebase
 const firebaseConfig = {
@@ -17,4 +18,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-export { auth, db }
+const storage = getStorage(app);
+export { auth, db , storage}
