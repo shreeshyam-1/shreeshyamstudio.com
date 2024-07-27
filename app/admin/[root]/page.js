@@ -1,16 +1,27 @@
 "use client";
 import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
-import React from "react";
-import Nav from "./Nav";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import Nav from "../Nav";
 
 
-const page = () => {
-  const { tapData,deleteTapData,fetchTaps, deleteImage } = useAuth();
-  console.log(tapData);
+const page = ({params}) => {
+  const { content,deleteData,fetchData, deleteImage } = useAuth();
+  const [heading, setHeading] = useState()
 
-  const deleteData = async(e)=>{
+  useEffect(() => {
+    fetchData(params.root.replace(/_/g, "/"))
+    let parts = params.root.split('_');
+    let newStr = `${capitalize(parts[1])} (${capitalize(parts[2])})`;
+    
+    function capitalize(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+    setHeading(newStr)
+    
+  }, [])
+
+  const handleDeleteData = async(e)=>{
     if(!window.confirm("Are you sure you want to delete data?")){
       return;
     }
@@ -19,10 +30,11 @@ const page = () => {
     // return
 
     try {
-      await deleteImage(tapData[e].image);
-      await deleteTapData(e)
+      if(content[e].image)
+      {await deleteImage(content[e].image);}
+      await deleteData(e)
 
-      fetchTaps();
+      fetchData(params.root.replace(/_/g, "/"))
 
       // setLoading(false)
 
@@ -36,11 +48,8 @@ const page = () => {
   return (
     <>
     <Nav/>
-    <div className="flex h-[100dvh] relative ">
-          <Image height={500} width={1000} src="/images/logo.png" className="w-[95%] md:w-[50%] m-auto " alt="Singhal Sanitary and Hardware store logo" />
-          <Image height={500} width={1000} src="/images/side2.png" className="w-[100%] absolute md:relative top-0 left-0 opacity-25 -z-10 md:opacity-100 md:w-[50%] m-auto mt-10" alt="Singhal Sanitary and Hardware store logo" />
-      </div>
-    {/* <div className="w-screen flex justify-end mt-4">
+    
+    <div className="w-screen flex justify-end mt-4">
     <Link
   href={`/admin/details/`}
   className="font-medium bg-blue-200 rounded-md px-5 py-3  mx-10"
@@ -73,7 +82,7 @@ const page = () => {
           </thead>
           <tbody>
             {
-                  Object.values(tapData).map((e,i)=>(
+                 content && Object.values(content).map((e,i)=>(
                       <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                   <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                       {e.categories}
@@ -99,7 +108,7 @@ const page = () => {
                   </td>
                   <td>
                   <button
-  onClick={()=>deleteData(e.uid)}
+  onClick={()=>handleDeleteData(e.uid)}
   className="font-medium text-red-600 dark:text-red-500 hover:underline "
 >
   Delete  
@@ -110,7 +119,7 @@ const page = () => {
             }
           </tbody>
         </table>
-      </div> */}
+      </div>
     </>
   );
 };

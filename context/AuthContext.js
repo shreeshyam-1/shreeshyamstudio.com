@@ -32,6 +32,7 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }) => {
   const [tapData, settapData] = useState(null); // if the person is the club verified
+  const [content, setContent] = useState(null); // if the person is the club verified
   const [childDisplay, setchildDisplay] = useState(false); // if the person is the club verified
   const router = useRouter();
 
@@ -118,11 +119,34 @@ export const AuthContextProvider = ({ children }) => {
 
 
 
+  // fetch data for the root
+  const fetchData = async (root) => {
+    
+      //all  data
+    await getDocs(collection(db, root))
+      .then((querySnapshot) => {
+        const newData = {};
+
+        querySnapshot.docs.forEach((doc) => {
+          newData[doc.id] = doc.data();
+        });
+        setContent(newData);
+        console.log(newData)
+      })
+      .catch((e) => console.log(e));
+  };
   // fetch data for the tap
   const fetchTaps = async () => {
-    console.log("first")
-    // all tap data
-    console.log("as")
+    
+    await getDocs(collection(db, "categories/faucet/mixture"))
+      .then((querySnapshot) => {
+        
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id, " => ", doc.data());
+      });
+      })
+      .catch((e) => console.log(e));
+      //all tap data
     await getDocs(collection(db, "Tap"))
       .then((querySnapshot) => {
         const newData = {};
@@ -138,17 +162,28 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   // update or add data
-  const setTapData = (data, id) => {
+  const setTapData = async(data, id) => {
     if (id) {
       return updateDoc(doc(db, "Tap", id), data);
     }
-    data = {
+
+    // Add a new document and get its reference
+    const docRef = await addDoc(collection(db, "Tap"), {
       ...data,
       postedTime: new Date(),
-    };
-    return addDoc(collection(db, "Tap"), data);
+  });
+
+  // Update the newly created document with its own UID
+  await updateDoc(docRef, { uid: docRef.id });
+
+  return docRef;
   };
 
+  //delete data
+
+  const deleteData = (id,root) => {
+    deleteDoc(doc(db, root, id));
+  }
   //delete data
 
   const deleteTapData = (id) => {
@@ -165,8 +200,11 @@ export const AuthContextProvider = ({ children }) => {
         setTapData,
         fetchTaps,
         deleteTapData,
+        deleteData,
         uploadImage,
         deleteImage,
+        content,
+        fetchData
         // loading
       }}
     >

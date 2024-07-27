@@ -18,7 +18,6 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
           <Darkmode> 
-            <Nav /> 
             {/* to settle the space for the navbar */}
             <div className="w-screen h-[100px]"></div>
         <AuthContextProvider>
