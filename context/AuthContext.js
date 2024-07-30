@@ -31,9 +31,9 @@ const AuthContext = createContext({});
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }) => {
-  const [tapData, settapData] = useState(null); // if the person is the club verified
   const [content, setContent] = useState(null); // if the person is the club verified
   const [childDisplay, setchildDisplay] = useState(false); // if the person is the club verified
+  const [curRoot, setcurRoot] = useState()
   const router = useRouter();
 
 
@@ -41,10 +41,7 @@ export const AuthContextProvider = ({ children }) => {
   //   Check weather the user was logged in or not
   useEffect(() => {
     // run every time when the login or logout was performed
-    console.log("11")
-    const recheck = async () => {
-      console.log("first")
-      await fetchTaps(); // if user is authenticate to any of the club then it will call its id
+    const recheck = async () => { 
       setchildDisplay(true)
 
 
@@ -121,7 +118,6 @@ export const AuthContextProvider = ({ children }) => {
 
   // fetch data for the root
   const fetchData = async (root) => {
-    
       //all  data
     await getDocs(collection(db, root))
       .then((querySnapshot) => {
@@ -131,50 +127,26 @@ export const AuthContextProvider = ({ children }) => {
           newData[doc.id] = doc.data();
         });
         setContent(newData);
-        console.log(newData)
+        setcurRoot(root)
       })
       .catch((e) => console.log(e));
   };
-  // fetch data for the tap
-  const fetchTaps = async () => {
-    
-    await getDocs(collection(db, "categories/faucet/mixture"))
-      .then((querySnapshot) => {
-        
-        querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
-      });
-      })
-      .catch((e) => console.log(e));
-      //all tap data
-    await getDocs(collection(db, "Tap"))
-      .then((querySnapshot) => {
-        const newData = {};
 
-        querySnapshot.docs.forEach((doc) => {
-          newData[doc.id] = doc.data();
-          newData[doc.id].uid = doc.id;
-        });
-        settapData(newData);
-        console.log(newData)
-      })
-      .catch((e) => console.log(e));
-  };
 
   // update or add data
-  const setTapData = async(data, id) => {
-    if (id) {
-      return updateDoc(doc(db, "Tap", id), data);
+  const setRootData = async(data, id) => {
+    if (id ) {
+      return updateDoc(doc(db, curRoot, id), data);
     }
-
+    
     // Add a new document and get its reference
-    const docRef = await addDoc(collection(db, "Tap"), {
+    const docRef = await addDoc(collection(db, curRoot), {
       ...data,
       postedTime: new Date(),
-  });
-
-  // Update the newly created document with its own UID
-  await updateDoc(docRef, { uid: docRef.id });
+    });
+    
+    // Update the newly created document with its own UID
+    await updateDoc(docRef, { uid: docRef.id });
 
   return docRef;
   };
@@ -184,22 +156,13 @@ export const AuthContextProvider = ({ children }) => {
   const deleteData = (id,root) => {
     deleteDoc(doc(db, root, id));
   }
-  //delete data
-
-  const deleteTapData = (id) => {
-    deleteDoc(doc(db, "Tap", id));
-  }
-
 
   return (
     <AuthContext.Provider
       value={{
         // returning all the essential functions and variables
-        tapData,
         childDisplay,
-        setTapData,
-        fetchTaps,
-        deleteTapData,
+        setRootData,
         deleteData,
         uploadImage,
         deleteImage,

@@ -10,8 +10,8 @@ const NavLinks = () => {
   const [subHeading, setSubHeading] = useState("");
   return (
     <>
-      {links.map((link) => (
-        <div>
+      {links.map((link,i4) => (
+        <div key={i4}>
           <div className=" pl-2 pt-2 md:p-0 md:cursor-pointer group">
             <h1
               className=" flex items-center group"
@@ -38,13 +38,13 @@ const NavLinks = () => {
                    
                   </div>
                   <div className="bg-white p-5 grid grid-cols-3 gap-10 ">
-                    {link.sublinks.map((mysublinks) => (
-                      <div>
+                    {link.sublinks.map((mysublinks,i) => (
+                      <div key={i}>
                         <h2 className="text-lg font-semibold">
                           {mysublinks.Head}
                         </h2>
-                        {mysublinks.sublink.map((slink) => (
-                          <li className="text-sm text-gray-600 my-2.5">
+                        {mysublinks.sublink.map((slink, i1) => (
+                          <li key={i1} className="text-sm text-gray-600 my-2.5">
                             <Link
                               href={`/admin/${slink.link}`}
                               className="text-blue-600 hover:text-black"
@@ -67,8 +67,8 @@ const NavLinks = () => {
           `}
           >
             {/* sublinks */}
-            {link.sublinks.map((slinks) => (
-              <div>
+            {link.sublinks.map((slinks,i2) => (
+              <div key={i2}>
                 <div>
                   <h1
                     onClick={() =>
@@ -95,8 +95,8 @@ const NavLinks = () => {
                       subHeading === slinks.Head ? "md:hidden" : "hidden"
                     }`}
                   >
-                    {slinks.sublink.map((slink) => (
-                      <li className="py-3 pl-14">
+                    {slinks.sublink.map((slink,i3) => (
+                      <li className="py-3 pl-14" key={i3}>
                         <Link href={`/admin/${slink.link}`}>{slink.name}</Link>
                       </li>
                     ))}

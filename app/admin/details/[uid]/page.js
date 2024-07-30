@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import Nav from "../../Nav";
 
 const page = ({ params }) => {
-  const { content, setTapData, fetchData, uploadImage, deleteImage } =
+  const { content, setRootData, fetchData, uploadImage, deleteImage } =
     useAuth();
   const [data, setdata] = useState({});
   const router = useRouter();
@@ -44,15 +44,18 @@ const page = ({ params }) => {
       img.onload = () => {
         const width = img.width;
         const height = img.height;
-        if (Math.round((width / height) * 10) / 10 !== 3 / 2) {
-          console.log(width);
-          console.log(height);
-          console.log(Math.round((width / height) * 10) / 10);
-          alert("Image must have a 3:2 aspect ratio.");
-          return;
-        }
+        // if (Math.round((width / height) * 10) / 10 !== 3 / 2) {
+        //   console.log(width);
+        //   console.log(height);
+        //   console.log(Math.round((width / height) * 10) / 10);
+        //   alert("Image must have a 3:2 aspect ratio.");
+        //   return;
+        // }
 
-        setImageFile(file);
+        // Generate a unique name using a timestamp
+        const uniqueName = `${Date.now()}-${file.name}`;
+        const renamedFile = new File([file], uniqueName, { type: file.type });
+        setImageFile(renamedFile);
         setImagePreview(URL.createObjectURL(file));
       };
       img.src = URL.createObjectURL(file);
@@ -81,15 +84,13 @@ const page = ({ params }) => {
       // setLoading(true)
 
       // if there was data is database then we use to update it
-      await setTapData(sendData, params.uid);
-
-      // fetching the data that is recently updated in the data base
-      fetchData();
+      await setRootData(sendData, params.uid);
 
       // setLoading(false)
 
       alert("Data updated successfully");
-      router.push("/admin");
+      // router.push("/admin");
+      window.history.back();
     } catch (err) {
       // setLoading(false)
       console.log(err);

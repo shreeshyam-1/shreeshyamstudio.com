@@ -7,8 +7,9 @@ import Nav from '../Nav'
 
 const page = ({params}) => {
 
-  const {tapData, setTapData,fetchTaps, uploadImage} = useAuth()
+  const { setRootData,fetchData, uploadImage} = useAuth()
   const [data, setdata] = useState({})
+  
   const router= useRouter();
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -33,14 +34,17 @@ const page = ({params}) => {
 
       const img = new Image();
       img.onload = () => {
-        const width = img.width;
-        const height = img.height;
-        if (Math.round(width/height*10)/10!== 3 / 2) {
-          alert("Image must have a 3:2 aspect ratio.");
-          return;
-        }
+        // const width = img.width;
+        // const height = img.height;
+        // if (Math.round(width/height*10)/10!== 3 / 2) {
+        //   alert("Image must have a 3:2 aspect ratio.");
+        //   return;
+        // }
 
-        setImageFile(file);
+        // Generate a unique name using a timestamp
+        const uniqueName = `${Date.now()}-${file.name}`;
+        const renamedFile = new File([file], uniqueName, { type: file.type });
+        setImageFile(renamedFile);
         setImagePreview(URL.createObjectURL(file));
       };
       img.src = URL.createObjectURL(file);
@@ -68,15 +72,13 @@ const page = ({params}) => {
       // setLoading(true)
 
       // if there was data is database then we use to update it
-      await setTapData(sendData,params.uid)
-
-      // fetching the data that is recently updated in the data base
-      fetchTaps();
+      await setRootData(sendData,params.uid)
 
       // setLoading(false)
 
       alert("Data Added successfully");
-      router.push('/admin')
+      // router.push('/admin')
+      window.history.back();
     } catch (err) {
       // setLoading(false)
       console.log(err);
@@ -103,6 +105,7 @@ const page = ({params}) => {
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
                 placeholder=" " 
                 onChange={handleImageChange} 
+                required
               />
               <label htmlFor="image" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Image</label>
             </div>

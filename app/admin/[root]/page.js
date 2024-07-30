@@ -3,6 +3,8 @@ import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Nav from "../Nav";
+import Image from "next/image";
+import Heading from "@/components/Heading";
 
 
 const page = ({params}) => {
@@ -26,13 +28,9 @@ const page = ({params}) => {
       return;
     }
 
-    // console.log(e)
-    // return
-
     try {
-      if(content[e].image)
-      {await deleteImage(content[e].image);}
-      await deleteData(e)
+      await deleteData(e,params.root.replace(/_/g, "/"))
+      await deleteImage(content[e].image);
 
       fetchData(params.root.replace(/_/g, "/"))
 
@@ -48,6 +46,7 @@ const page = ({params}) => {
   return (
     <>
     <Nav/>
+    <Heading heading={heading} />
     
     <div className="w-screen flex justify-end mt-4">
     <Link
@@ -59,11 +58,12 @@ const page = ({params}) => {
 
     </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-6 border-2">
+
         <table className="w-full  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Categories
+                Images
               </th>
               <th scope="col" className="px-6 py-3">
                 Company
@@ -85,7 +85,7 @@ const page = ({params}) => {
                  content && Object.values(content).map((e,i)=>(
                       <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                   <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      {e.categories}
+                      <Image src={e.image} alt={e.name} width={60} height={20} />
                   </th>
                   <td className="px-6 py-4">
                       {e.company}

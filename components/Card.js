@@ -11,7 +11,7 @@ const Card = ({ data, Key }) => {
         height={100}
         width={300}
         className="p-8 rounded-t-lg w-full"
-        src={`/images/items/${data.image}`}
+        src={data.image}
         alt={data.heading}
       />
       <div className="px-5 pb-5">
