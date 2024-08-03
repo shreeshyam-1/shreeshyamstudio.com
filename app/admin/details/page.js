@@ -27,10 +27,10 @@ const page = ({params}) => {
         return;
       }
 
-      if (file.size > maxSize) {
-        alert("File size must be under 1MB.");
-        return;
-      }
+      //if (file.size > maxSize) {
+      //  alert("File size must be under 1MB.");
+      //  return;
+      //}
 
       const img = new Image();
       img.onload = () => {
