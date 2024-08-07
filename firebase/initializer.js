@@ -6,7 +6,7 @@ import { getStorage } from 'firebase/storage';
 
 // configration data is stored on the cxi@miet.ac.in firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyC_Khhv9TRAdC_Gp_K6JEwDiNpGEIVLZbI",
+    apiKey: "A0IzaSyC_Khhv9TRAdC_Gp_K6JEwDiNpGEIVLZbI",
     authDomain: "singhalsanitary-d76ba.firebaseapp.com",
     projectId: "singhalsanitary-d76ba",
     storageBucket: "singhalsanitary-d76ba.appspot.com",
