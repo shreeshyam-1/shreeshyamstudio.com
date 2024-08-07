@@ -5,6 +5,7 @@ import Heading from "@/components/Heading";
 import { items } from "@/Data/Card";
 import { useAuth } from "@/context/AuthContext";
 import Nav from "@/components/Nav";
+import Link from "next/link";
 
 export default function Page() {
   const { tapData } = useAuth();
@@ -45,14 +46,14 @@ export default function Page() {
             <div className=" my-8 space-y-3 ">
               <h3 className="text-2xl text-col2">Explore Our Collection</h3>
               <p>
-              Our products strike the ideal balance between soft curves and geometric shapes, creating a unique and stylish look for your bathroom.
-<br /><br />
-As one of the leading bathroom fittings providers in India, Singhal Sanitary & Hardware Store is committed to offering world-class products that meet the highest standards of quality and design.
+                Our products strike the ideal balance between soft curves and geometric shapes, creating a unique and stylish look for your bathroom.
+                <br /><br />
+                As one of the leading bathroom fittings providers in India, Singhal Sanitary & Hardware Store is committed to offering world-class products that meet the highest standards of quality and design.
               </p>
             </div>
-            <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
+            <Link href="/categories_sanitaryware_vanities"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
               EXPLORE!
-            </button>
+            </button></Link>
           </div>
         </div>
         <div className="w-[100%] flex justify-between items-center px-12 flex-col-reverse md:flex-row">
@@ -63,14 +64,14 @@ As one of the leading bathroom fittings providers in India, Singhal Sanitary & H
                 Innovative and Efficient
               </h3>
               <p>
-              Our faucets blend artful lines and flowing forms to create
-              efficient, water-saving solutions that complement all modern
-              bathroom styles and sink configurations.
+                Our faucets blend artful lines and flowing forms to create
+                efficient, water-saving solutions that complement all modern
+                bathroom styles and sink configurations.
               </p>
             </div>
-            <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:translate-x-1 hover:-translate-y-1 transition-all">
+            <Link href="/categories_faucet_taps"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:translate-x-1 hover:-translate-y-1 transition-all">
               EXPLORE!
-            </button>
+            </button></Link>
           </div>
           <Image
             height={500}
@@ -94,22 +95,22 @@ As one of the leading bathroom fittings providers in India, Singhal Sanitary & H
             </h2>
             <div className=" my-8 space-y-3 ">
               <h3 className="text-2xl text-col2 ">
-              Perfect Harmony of Design and Utility
+                Perfect Harmony of Design and Utility
               </h3>
-              
-            <p className=" my-8">
-              Our accessories are meticulously crafted to blend artful lines and
-              flowing forms, creating efficient and stylish solutions that suit
-              all modern bathroom styles.
-              <br />
-              <br />
-              Explore our shop collection today and transform your bathroom into
-              a sanctuary of style and convenience.
-            </p>
+
+              <p className=" my-8">
+                Our accessories are meticulously crafted to blend artful lines and
+                flowing forms, creating efficient and stylish solutions that suit
+                all modern bathroom styles.
+                <br />
+                <br />
+                Explore our shop collection today and transform your bathroom into
+                a sanctuary of style and convenience.
+              </p>
             </div>
-            <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
+            <Link href="/categories_accessories_bathroom"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
               EXPLORE!
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ const Card = ({ data, Key }) => {
       <Image
         height={100}
         width={300}
-        className="p-8 rounded-t-lg w-full"
+        className="p-8 rounded-lg w-full"
         src={data.image}
         alt={data.heading}
       />

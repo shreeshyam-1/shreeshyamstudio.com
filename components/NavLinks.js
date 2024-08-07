@@ -3,14 +3,14 @@
 import React, { useState } from "react";
 import Link from 'next/link'
 import { links } from "./Mylinks";
-import { IoIosArrowUp,IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
 const NavLinks = () => {
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
   return (
     <>
-      {links.map((link,i) => (
+      {links.map((link, i) => (
         <div key={i}>
           <div className=" pl-2 pt-2 md:p-0 md:cursor-pointer group">
             <h1
@@ -24,8 +24,8 @@ const NavLinks = () => {
               <IoIosArrowDown className=" hidden md:block inline-flex text-blue-800 " />
               <span className="text-xl md:hidden  inline">
                 {
-                    heading === link.name ? <IoIosArrowUp/> : <IoIosArrowDown/>
-                  }
+                  heading === link.name ? <IoIosArrowUp /> : <IoIosArrowDown />
+                }
               </span>
               <span className="text-xl md:mt-1 md:ml-2  md:block hidden group-hover:rotate-180 group-hover:-mt-2">
                 <ion-icon name="chevron-down"></ion-icon>
@@ -33,17 +33,17 @@ const NavLinks = () => {
             </h1>
             {link.submenu && (
               <div>
-                <div className="absolute right-0 top-10 hidden group-hover:md:block hover:md:block">
+                <div className="absolute  top-10 hidden group-hover:md:block hover:md:block">
                   <div className="py-3">
-                   
+
                   </div>
                   <div className="bg-white p-5 grid grid-cols-3 gap-10 ">
-                    {link.sublinks.map((mysublinks,i2) => (
+                    {link.sublinks.map((mysublinks, i2) => (
                       <div key={i2}>
                         <h2 className="text-lg font-semibold">
                           {mysublinks.Head}
                         </h2>
-                        {mysublinks.sublink.map((slink,i3) => (
+                        {mysublinks.sublink.map((slink, i3) => (
                           <li key={i3} className="text-sm text-gray-600 my-2.5">
                             <Link
                               href={slink.link}
@@ -67,7 +67,7 @@ const NavLinks = () => {
           `}
           >
             {/* sublinks */}
-            {link.sublinks.map((slinks,i4) => (
+            {link.sublinks.map((slinks, i4) => (
               <div key={i4}>
                 <div>
                   <h1
@@ -82,18 +82,16 @@ const NavLinks = () => {
 
                     <span className="text-xl md:mt-1 md:ml-2 inline">
                       <ion-icon
-                        name={`${
-                          subHeading === slinks.Head
+                        name={`${subHeading === slinks.Head
                             ? "chevron-up"
                             : "chevron-down"
-                        }`}
+                          }`}
                       ></ion-icon>
                     </span>
                   </h1>
                   <div
-                    className={`${
-                      subHeading === slinks.Head ? "md:hidden" : "hidden"
-                    }`}
+                    className={`${subHeading === slinks.Head ? "md:hidden" : "hidden"
+                      }`}
                   >
                     {slinks.sublink.map((slink, i5) => (
                       <li className="py-3 pl-14" key={i5}>
