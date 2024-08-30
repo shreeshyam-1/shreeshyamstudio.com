@@ -90,7 +90,7 @@ const page = ({params}) => {
   return (
    <>
    <Nav/>
-     <div className='w-screen mb-16'>
+     <div className='w-screen m-5 md:m-auto mb-16 '>
         
         <h2 className='my-5 mx-auto w-fit text-2xl font-extrabold text-slate-600'>Details of the product</h2>
     <form className="max-w-md mx-auto" onSubmit={(e) => {
