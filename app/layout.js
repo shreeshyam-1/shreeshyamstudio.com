@@ -15,6 +15,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16792490699">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16792490699');
+</script>
       </head>
       <body className={inter.className}>
           <Darkmode> 
