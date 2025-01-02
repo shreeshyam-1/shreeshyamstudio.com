@@ -14,19 +14,19 @@ export default function Page() {
   return (
     <>
       <Nav />
-      <div className="flex h-[100dvh] relative overflow-hidden">
+      <div className="flex h-[100dvh] relative ">
         <Image
           height={500}
           width={1000}
           src="/images/logo.png"
-          className="w-[95%] md:w-[50%] m-auto "
+          className="w-[95%] md:w-[35%] m-auto "
           alt="Singhal Sanitary and Hardware store logo"
         />
         <Image
           height={500}
           width={1000}
-          src="/images/side01.png"
-          className="w-[100%] absolute md:relative top-0 left-0 opacity-25 -z-10 md:opacity-100 md:w-[50%] m-auto mt-10"
+          src="/images/costume.jpeg"
+          className="w-[100%] absolute md:relative top-0 left-0 opacity-[.10] -z-10 md:opacity-100 md:w-[30%] m-auto mt-10"
           alt="Singhal Sanitary and Hardware store logo"
         />
       </div>
@@ -35,13 +35,13 @@ export default function Page() {
           <Image
             height={500}
             width={500}
-            src="/images/sanitaryware.jpeg"
+            src="/images/mod1.jpeg"
             className=" w-[100%] md:w-[50%]  m-10 rounded-md"
             alt="Singhal Sanitary and Hardware store logo"
           />
           <div>
             <h2 className="text-4xl font-medium text-col1 uppercase">
-              Sanitaryware
+              Gown
             </h2>
             <div className=" my-8 space-y-3 ">
               <h3 className="text-2xl text-col2">Explore Our Collection</h3>
@@ -58,7 +58,7 @@ export default function Page() {
         </div>
         <div className="w-[100%] flex justify-between items-center px-12 flex-col-reverse md:flex-row">
           <div>
-            <h2 className="text-4xl font-medium text-col1 uppercase">faucet</h2>
+            <h2 className="text-4xl font-medium text-col1 uppercase">Crop Top</h2>
             <div className=" my-8 space-y-3 ">
               <h3 className="text-2xl text-col2 ">
                 Innovative and Efficient
@@ -76,7 +76,7 @@ export default function Page() {
           <Image
             height={500}
             width={500}
-            src="/images/faucet.jpeg"
+            src="/images/mod2.jpeg"
             className=" w-[100%] md:w-[50%]  m-10 rounded-md"
             alt="Singhal Sanitary and Hardware store logo"
           />
@@ -85,13 +85,13 @@ export default function Page() {
           <Image
             height={500}
             width={500}
-            src="/images/acessories.jpeg"
+            src="/images/mod3.jpeg"
             className=" w-[100%] md:w-[50%]  m-10 rounded-md"
             alt="Singhal Sanitary and Hardware store logo"
           />
           <div>
             <h2 className="text-4xl font-medium text-col1 uppercase">
-              accessories
+              Indo Western
             </h2>
             <div className=" my-8 space-y-3 ">
               <h3 className="text-2xl text-col2 ">
