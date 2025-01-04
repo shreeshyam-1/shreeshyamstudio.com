@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Darkmode from "@/components/Darkmode";
 import Nav from "@/components/Nav";
-import { AuthContextProvider } from "@/context/AuthContext";
+// import { AuthContextProvider } from "@/context/AuthContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -35,9 +35,9 @@ export default function RootLayout({ children }) {
         <Darkmode>
           {/* to settle the space for the navbar */}
           <div className="w-screen h-[100px]"></div>
-          <AuthContextProvider>
+          {/* <AuthContextProvider> */}
             {children}
-          </AuthContextProvider>
+          {/* </AuthContextProvider> */}
           {/* {children} */}
         </Darkmode>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>

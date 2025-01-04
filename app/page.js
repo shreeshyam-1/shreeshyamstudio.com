@@ -1,15 +1,11 @@
 "use client";
 import Image from "next/image";
-import Card from "@/components/Card";
-import Heading from "@/components/Heading";
-import { items } from "@/Data/Card";
-import { useAuth } from "@/context/AuthContext";
 import Nav from "@/components/Nav";
 import Link from "next/link";
 
 export default function Page() {
-  const { tapData } = useAuth();
-  console.log(tapData);
+  // const { tapData } = useAuth();
+  // console.log(tapData);
 
   return (
     <>
@@ -51,7 +47,7 @@ export default function Page() {
                 As one of the leading bathroom fittings providers in India, Singhal Sanitary & Hardware Store is committed to offering world-class products that meet the highest standards of quality and design.
               </p>
             </div>
-            <Link href="/categories_sanitaryware_vanities"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
+            <Link href="/gown"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
               EXPLORE!
             </button></Link>
           </div>
@@ -69,7 +65,7 @@ export default function Page() {
                 bathroom styles and sink configurations.
               </p>
             </div>
-            <Link href="/categories_faucet_taps"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:translate-x-1 hover:-translate-y-1 transition-all">
+            <Link href="/croptop"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:translate-x-1 hover:-translate-y-1 transition-all">
               EXPLORE!
             </button></Link>
           </div>
@@ -108,7 +104,7 @@ export default function Page() {
                 a sanctuary of style and convenience.
               </p>
             </div>
-            <Link href="/categories_accessories_bathroom"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
+            <Link href="/indowestern"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
               EXPLORE!
             </button></Link>
           </div>
