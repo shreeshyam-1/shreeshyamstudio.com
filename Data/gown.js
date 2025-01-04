@@ -14,6 +14,16 @@
  */
 
 const gownData = [
+ {
+        heading:"",
+        image:"",
+        categories:"Gown",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"gown/"
+    },
     {
         heading:"mod2",
         image:"mod2.jpeg",
