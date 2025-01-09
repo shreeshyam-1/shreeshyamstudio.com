@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Shree Shyam Studio",
-  description: "Discover the ultimate destination for all your plumbing needs at our shop! Dive into a world of top-notch water pipe fittings, all branded and budget-friendly, catering to every requirement. Explore our extensive collection featuring the latest trends in wash basins, toilet seats, and an array of accessories for your kitchen and bathroom. From sleek towel holders to durable stainless steel sinks, we've got you covered. Elevate your space with our premium selections including soap dispensers, shelves, mirrors, and more. Experience convenience, quality, and style all in one place!   ",
+  description: " Shree Shyam Studio, your one-stop destination for premium-quality ethnic and fusion wear at wholesale prices. We specialize in an exquisite range of designer gowns, trendy Indo-Western outfits, and stylish crop tops, perfect for retailers and boutique owners seeking high-demand, fashionable apparel.",
 };
 
 export default function RootLayout({ children }) {
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
           {/* to settle the space for the navbar */}
           <div className="w-screen h-[100px]"></div>
           {/* <AuthContextProvider> */}
-            {children}
+          {children}
           {/* </AuthContextProvider> */}
           {/* {children} */}
         </Darkmode>

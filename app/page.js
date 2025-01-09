@@ -42,9 +42,8 @@ export default function Page() {
             <div className=" my-8 space-y-3 ">
               <h3 className="text-2xl text-col2">Explore Our Collection</h3>
               <p>
-                Our products strike the ideal balance between soft curves and geometric shapes, creating a unique and stylish look for your bathroom.
-                <br /><br />
-                As one of the leading bathroom fittings providers in India, Singhal Sanitary & Hardware Store is committed to offering world-class products that meet the highest standards of quality and design.
+                Discover a stunning range of gowns at Shree Shyam Studio, designed to captivate and elevate your fashion offerings. From elegant evening wear to luxurious party gowns, our collection blends traditional craftsmanship with modern aesthetics. Each gown is tailored to perfection using premium-quality fabrics, intricate embroidery, and stylish embellishments.
+
               </p>
             </div>
             <Link href="/gown"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
@@ -57,12 +56,10 @@ export default function Page() {
             <h2 className="text-4xl font-medium text-col1 uppercase">Crop Top</h2>
             <div className=" my-8 space-y-3 ">
               <h3 className="text-2xl text-col2 ">
-                Innovative and Efficient
+                Trendy Wholesale Crop Tops for Every Occasion
               </h3>
               <p>
-                Our faucets blend artful lines and flowing forms to create
-                efficient, water-saving solutions that complement all modern
-                bathroom styles and sink configurations.
+                Stay ahead in the fashion game with Shree Shyam Studio's exclusive range of stylish crop tops. Designed to cater to the modern woman, our collection features a mix of chic, versatile, and contemporary styles that perfectly blend comfort and elegance.
               </p>
             </div>
             <Link href="/croptop"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:translate-x-1 hover:-translate-y-1 transition-all">
@@ -91,17 +88,11 @@ export default function Page() {
             </h2>
             <div className=" my-8 space-y-3 ">
               <h3 className="text-2xl text-col2 ">
-                Perfect Harmony of Design and Utility
+                Grace Meets Glamour: Wholesale Indo-Western Outfits
               </h3>
 
               <p className=" my-8">
-                Our accessories are meticulously crafted to blend artful lines and
-                flowing forms, creating efficient and stylish solutions that suit
-                all modern bathroom styles.
-                <br />
-                <br />
-                Explore our shop collection today and transform your bathroom into
-                a sanctuary of style and convenience.
+                Embrace the perfect fusion of tradition and modernity with Shree Shyam Studio's exclusive Indo-Western collection. Our designs bring together the richness of Indian heritage with contemporary silhouettes, creating outfits that are stylish, versatile, and perfect for every occasion
               </p>
             </div>
             <Link href="/indowestern"> <button className="w-full p-5 text-left font-semibold text-white rounded-sm bg-col4 hover:-translate-x-1 hover:-translate-y-1 transition-all">
