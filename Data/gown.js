@@ -13,7 +13,17 @@
  
  */
 
-const gownData = [ 
+const gownData = [ {
+        heading:"SG-41",
+        image:"Photoroom-20250114_190710[1].png",
+        categories:"Gown",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"gown/"
+    },
+ 
  {
         heading:"SG-64",
         image:"Photoroom-20250114_190441[1].png",
