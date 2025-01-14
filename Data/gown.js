@@ -15,6 +15,16 @@
 
 const gownData = [ 
  {
+        heading:"SG-60",
+        image:"Photoroom-20250114_190822[1].png",
+        categories:"Gown",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"gown/"
+    },
+ {
         heading:"SG-63",
         image:"Photoroom-20250114_190538[1].png",
         categories:"Gown",
