@@ -35,7 +35,7 @@ const gownData = [
         path:"gown/"
     },
 
-
+{
         heading:"SG-62",
         image:"Photoroom-20250114_191013[1].png",
         categories:"Gown",
