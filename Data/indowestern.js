@@ -14,16 +14,9 @@
  */
 
 const indoData = [
-    {
-        heading:"mod3",
-        image:"mod3.jpeg",
-        categories:"Indo Western",
-        company:"none",
-        price:"54",
-        discount:"25",
-        buttonLink:"/",
-        path:"indowestern/"
-    },
+    
+
+
 ]
 
 export  {indoData}
