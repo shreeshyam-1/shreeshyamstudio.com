@@ -15,6 +15,16 @@
 
 const indoData = [
  {
+        heading:"Indo-07",
+        image:"Photoroom-20250116_143750[1].png",
+        categories:"Indo Western",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"indowestern/"
+    },
+ {
         heading:"Indo-05",
         image:"Photoroom-20250116_143652[1].png",
         categories:"Indo Western",
