@@ -14,16 +14,49 @@
  */
 
 const cropData = [
-    {
-        heading:"mod1",
-        image:"mod1.jpeg",
+ {
+        heading:"Mor-1",
+        image:"Photoroom-20250116_145452[1].png",
         categories:"Crop Top",
-        company:"none",
-        price:"54",
-        discount:"25",
-        buttonLink:"/",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
         path:"croptop/"
     },
+ {
+        heading:"S3-35",
+        image:"Photoroom-20250116_144156[1].png",
+        categories:"Crop Top",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"croptop/"
+    },
+ {
+        heading:"S3-37",
+        image:"Photoroom-20250116_144100[1].png",
+        categories:"Crop Top",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"croptop/"
+    },
+ {
+        heading:"S3-47",
+        image:"Photoroom-20250116_143915[1].png",
+        categories:"Crop Top",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"croptop/"
+    },
+    
+
+
 ]
 
 export  {cropData}

@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Shree Shyam Studio",
-  description: "We specialize in an exquisite range of designer gowns, trendy Indo-Western outfits, and stylish crop tops, perfect for retailers and boutique owners seeking high-demand, fashionable apparel.",
+  description: " Shree Shyam Studio, your one-stop destination for premium-quality ethnic and fusion wear at wholesale prices. We specialize in an exquisite range of designer gowns, trendy Indo-Western outfits, and stylish crop tops, perfect for retailers and boutique owners seeking high-demand, fashionable apparel.",
 };
 
 export default function RootLayout({ children }) {
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
           {/* to settle the space for the navbar */}
           <div className="w-screen h-[100px]"></div>
           {/* <AuthContextProvider> */}
-            {children}
+          {children}
           {/* </AuthContextProvider> */}
           {/* {children} */}
         </Darkmode>

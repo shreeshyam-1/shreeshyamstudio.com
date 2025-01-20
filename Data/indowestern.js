@@ -14,16 +14,38 @@
  */
 
 const indoData = [
-    {
-        heading:"mod3",
-        image:"mod3.jpeg",
+ {
+        heading:"Indo-07",
+        image:"Photoroom-20250116_143750[1].png",
         categories:"Indo Western",
-        company:"none",
-        price:"54",
-        discount:"25",
-        buttonLink:"/",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
         path:"indowestern/"
     },
+ {
+        heading:"Indo-05",
+        image:"Photoroom-20250116_143652[1].png",
+        categories:"Indo Western",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"indowestern/"
+    },
+    {
+        heading:"Indo-06",
+        image:"Photoroom-20250116_143513[1].png",
+        categories:"Indo Western",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"indowestern/"
+    },
+
+
 ]
 
 export  {indoData}
