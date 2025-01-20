@@ -31,7 +31,7 @@ export default function Page() {
           <Image
             height={500}
             width={500}
-            src="/images/mod1.jpeg"
+            src="/images/gown.jpeg"
             className=" w-[100%] md:w-[50%]  m-10 rounded-md"
             alt="Singhal Sanitary and Hardware store logo"
           />
@@ -72,7 +72,7 @@ export default function Page() {
           <Image
             height={500}
             width={500}
-            src="/images/mod2.jpeg"
+            src="/images/crop.jpeg"
             className=" w-[100%] md:w-[50%]  m-10 rounded-md"
             alt="Singhal Sanitary and Hardware store logo"
           />
@@ -81,7 +81,7 @@ export default function Page() {
           <Image
             height={500}
             width={500}
-            src="/images/mod3.jpeg"
+            src="/images/indo.jpeg"
             className=" w-[100%] md:w-[50%]  m-10 rounded-md"
             alt="Singhal Sanitary and Hardware store logo"
           />
