@@ -15,6 +15,16 @@
 
 const cropData = [
  {
+        heading:"Mor-2",
+        image:"Photoroom-20250224_120343[1].png",
+        categories:"Crop Top",
+        company:"",
+        price:"",
+        discount:"",
+        buttonLink:"",
+        path:"croptop/"
+    },
+ {
         heading:"Mor-3",
         image:"Photoroom-20250224_120301[1].png",
         categories:"Crop Top",
